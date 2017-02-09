@@ -6,8 +6,8 @@
   <% end %>
 </div>
 <div class="like-count-div">
-  <span class="like-count" id="like-count-<%= project.id %>"> 
-    <%= project.likes.count %>
+  <span class="like-count" id="like-count-<%= project.id %>">
+    <%= project.likes.count %><%= t "liked" %>
   </span>
-  <p><%= t "liked" %></p>
+
 </div>

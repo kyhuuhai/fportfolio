@@ -1,0 +1,18 @@
+<div class="slide row">
+  <% @posts_relate.each do |new_relate| %>
+  <div class="col-md-4">
+      <div class="product-item">
+        <div class="pi-img-wrapper">
+          <%= image_tag "framgia.png", class: "img-responsive resize-related-blog" %>
+          <div>
+            <%= link_to "View new", news_path(I18n.locale, new_relate), class: "btn" %>
+          </div>
+        </div>
+        <h3><%= link_to new_relate.title, news_path(I18n.locale, new_relate) %></h3>
+        <div class="pi-price"><%= new_relate.user.name %></div>
+        <%= link_to "View more", news_path(I18n.locale, new_relate), class: "btn add2cart" %>
+        <div class="sticker sticker-new"></div>
+      </div>
+  </div>
+  <% end %>
+</div>

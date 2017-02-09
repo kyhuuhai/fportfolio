@@ -1,105 +1,144 @@
-<section id="page-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="section-title">
-          <h2><%= @project.name %></h2>
-          <div class="post-meta text-uppercase">
-            <span><%= @project.created_at %></span>
-            <span><%= t "in" %> <%= link_to @project.category.name, "" %></span>
-          </div>
-          <button class="ui facebook button">
-            <i class="facebook icon"></i>
-            <%= t "facebook" %>
-          </button>
-          <button class="ui twitter button">
-            <i class="twitter icon"></i>
-            <%= t "twitter" %>
-          </button>
-          <button class="ui google plus button">
-            <i class="google plus icon"></i>
-            <%= t "google_plus" %>
-          </button>
-          <button class="ui vk button">
-            <i class="vk icon"></i>
-            <%= t "vk" %>
-          </button>
-          <button class="ui linkedin button">
-            <i class="linkedin icon"></i>
-            <%= t "linkedin" %>
-          </button>
-          <button class="ui instagram button">
-            <i class="instagram icon"></i>
-            <%= t "instagram" %>
-          </button>
-          <button class="ui youtube button">
-            <i class="youtube icon"></i>
-            <%= t "youtube" %>
-          </button>
-          <span class="st-border"></span>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="modal-body">
+        <div class="wh-sensei-title-wrap wh-padding title-portfolio">
+      <h2 class="capitalize"><%= @project.name %></h2>
+      <div class="col-md-2">
+        <%= render partial: "shared/like_project",  locals: {project: @project, like: @like}%>
       </div>
+      <div class="col-md-2" style="margin-left: -100px">
+        <div class="disable-cancel">
+          <%= rating_for @project, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+        </div>
+       </div>
+       <div class="col-md-12">
+      <div class="section-title">
+        <button class="ui facebook button">
+          <i class="facebook icon"></i>
+          <%= t "facebook" %>
+        </button>
+        <button class="ui twitter button">
+          <i class="twitter icon"></i>
+          <%= t "twitter" %>
+        </button>
+        <button class="ui google plus button">
+          <i class="google plus icon"></i>
+          <%= t "google_plus" %>
+        </button>
+        <button class="ui vk button">
+          <i class="vk icon"></i>
+          <%= t "vk" %>
+        </button>
+        <button class="ui linkedin button">
+          <i class="linkedin icon"></i>
+          <%= t "linkedin" %>
+        </button>
+        <button class="ui instagram button">
+          <i class="instagram icon"></i>
+          <%= t "instagram" %>
+        </button>
+        <button class="ui youtube button">
+          <i class="youtube icon"></i>
+          <%= t "youtube" %>
+        </button>
+      </div>
+      </div>
+      <hr />
     </div>
-  </div>
-</section>
-<section id="project">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <div class="single-blog">
-          <article>
-            <div class="post-thumb">
-              <figure class="wpb_wrapper vc_figure">
-                <div class="vc_single_image-wrapper   vc_box_border_grey">
-                  <div id="portfolio_slide" class="carousel slide"
-                    data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                      <% @images.each_with_index do |image, index| %>
-                        <div class="item <%= set_class_by_index index %>">
-                            <%= image_tag image.image.url ,
-                              class: "img-responsive img-centered
-                            img-slide img-project" %>
-                        </div>
-                      <% end %>
-                      <ol class="carousel-indicators">
-                        <% @images.each_with_index do |image, index| %>
-                          <li data-target="#portfolio_slide"
-                            data-slide-to=<%= index %>
-                            class="<%= set_class_by_index index %>">
-                          </li>
-                        <% end %>
-                      </ol>
+    <div class="col-md-12">
+    <p class="desc-portfolio"><%= @project.description %></p>
+    <div class="portfolio">
+      <div class="col-md-8">
+        <div class="three fourths wh-padding wh-content-inner left">
+          <figure class="wpb_wrapper vc_figure" style="margin-left: -6%;">
+            <div class="vc_single_image-wrapper   vc_box_border_grey">
+              <div id="portfolio_slide" class="carousel slide"
+                data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <% @project.images.each_with_index do |image, index| %>
+                    <div class="item <%= set_class_by_index index %>">
+                      <%= image_tag image.image.url ,
+                        class: "img-responsive img-centered
+                          img-slide img-project" %>
                     </div>
-                  </div>
+                  <% end %>
+                  <ol class="carousel-indicators">
+                    <% @images.each_with_index do |image, index| %>
+                      <li data-target="#portfolio_slide"
+                        data-slide-to=<%= index %>
+                        class="<%= set_class_by_index index %>">
+                      </li>
+                    <% end %>
+                  </ol>
                 </div>
-              </figure>
-            </div>
-            <div class="post-article">
-              <div class="col-md-12 margin-20">
-                <span class="feature-project">
-                <b><%= t "feature_project" %>:</b>
-                </span><%= @project.description %>
-              </div>
-              <br />
-              <div class="col-md-6">
-                <p class="text-left">
-                <b> <%= t "server_informations" %>: </b><br />
-                <%= @project.server_information %></p>
-              </div>
-              <div class="col-md-6">
-                <p class="text-left">
-                <b> <%= t "core_features" %>: </b><br />
-                  <%= @project.core_features %>
-                </p>
               </div>
             </div>
-          </article>
+          </figure>
         </div>
-        <hr>
-        <br/ >
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
+        <div class="wh-sidebar one fourth wh-padding left width-333">
+          <section class="course-meta course-enrolment">
+          </section>
+          <%= render "member_of_project", object: @project.users %>
+        </div>
       </div>
+          <br />
+          <div class="col-md-6 show-attributes">
+            <p class="text-left">
+              <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+              <b> <%= t "core_features" %>: </b><br />
+              <%= @project.core_features %></p>
+          </div><br />
+          <div class="col-md-6 show-attributes">
+            <p class="text-left">
+            <span class="glyphicon glyphicon glyphicon-th-large" style="color:#f4b942"></span>
+              <b> <%= t "server_informations" %>: </b><br />
+              <%= @project.server_information %></p>
+          </div><br />
+          <div class="col-md-6 show-attributes">
+            <p class="text-left">
+            <span class="glyphicon glyphicon-globe" style="color:#f4b942"></span>
+              <b> <%= t "pm_url" %>: </b><br />
+              <%= @project.pm_url %></p>
+          </div><br />
+          <div class="col-md-6 show-attributes">
+            <p class="text-left">
+            <span class="glyphicon glyphicon-list-alt" style="color:#f4b942"></span>
+              <b> <%= t "platform" %>: </b><br />
+              <%= @project.platform %></p>
+          </div><br />
+          <div class="col-md-6 show-attributes">
+            <p class="text-left">
+            <span class="glyphicon glyphicon-cloud" style="color:#f4b942"></span>
+              <b> <%= t "url" %>: </b><br />
+              <%= @project.url %>
+            </p>
+          </div><br />
+          <div class="col-md-6 show-attributes">
+            <p class="text-left">
+            <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+              <b> <%= t "git_repository" %>: </b><br />
+              <%= @project.git_repository %>
+            </p>
+          </div>
+        <hr />
+      </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    </hr>
+    </div>
+
+    <%= render partial: "comments/comment_form", locals: {project: @project}%>
+    <div class="entries" id="entries">
+      <%= render @comments %>
     </div>
   </div>
-</section>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".disable-cancel img.raty-cancel").hide();
+  });
+</script>

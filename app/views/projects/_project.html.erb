@@ -1,17 +1,13 @@
-<div class="col-md-4 col-sm-6 portfolio-item">
-  <%= link_to project_path(I18n.locale, project), class: "portfolio-link",
-    data: {toggle: "modal"}, remote: true  do %>
-    <div class="portfolio-hover">
-      <div class="portfolio-hover-content">
-        <i class="fa fa-plus fa-3x"></i>
-      </div>
+<div class="col-md-4 col-sm-6 work-grid wordpress graphic">
+  <div class="portfolio-content">
+    <%= link_to project_path(I18n.locale, project), class: "img-responsive", style: "height: 220px;" do %>
+      <%= image_tag project.images.first.image.url, class: "img-responsive resize-project" %>
+    <% end %>
+    <div class="portfolio-overlay">
+      <%= link_to project_path(I18n.locale, project) do %><i class="fa fa-camera-retro"></i><% end %>
+      <h5><%= project.name %></h5>
+      <p><%= project.description.truncate(Settings.description) %></p>
     </div>
-    <%= image_tag "portfolio/roundicons.png", class: "img-responsive" %>
-  <% end %>
-  <div class="portfolio-caption">
-    <h4 class="font-weight-700"><%= project.name %></h4>
-    <p class="text-muted">
-      <%= project.description.truncate(Settings.description) %>
-    </p>
   </div>
 </div>
+

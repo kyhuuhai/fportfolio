@@ -4,10 +4,13 @@
       <div class="col-md-12">
         <div class="section-title">
           <h2><%= @blog.title %></h2>
+          <div class="disable-cancel">
+            <%= rating_for @blog, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+          </div>
           <div class="post-meta text-uppercase">
             <span><%= I18n.l @blog.created_at, format: t("format.datetime_create") %></span>
-            <span><%= t "in" %> <%= link_to @blog.category.name, blogs_path(category: @blog.category.id) %></span>
-            <span><%= t "by" %> <%= link_to @blog.user.name, "" %></span>
+            <span><%= t "in" %> <%= link_to @blog.category.name, blogs_path(I18n.locale, category: @blog.category.id) %></span>
+            <span><%= t "by" %> <%= link_to @blog.user.name, user_path(I18n.locale, @blog.user.id) %></span>
           </div>
           <button class="ui facebook button">
             <i class="facebook icon"></i>
@@ -43,7 +46,7 @@
     </div>
   </div>
 </section>
-<section id="blog">
+<section id="blog" style="margin-bottom: 50px;">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -62,5 +65,7 @@
         <br/ >
       </div>
     </div>
+    <h3><%= t "blog_relate" %></h3>
+    <%= render "related_blogs" %>
   </div>
 </section>

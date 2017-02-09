@@ -8,8 +8,11 @@
         </h3>
       </div>
     </div>
-    <div class="row">
+    <hr />
+    <div class="portfolio-wrapper" >
+      <div class="portfolio-items">
       <%= render @projects %>
+      </div>
     </div>
     <div class="center">
       <%= paginate @projects, theme: "twitter-bootstrap-3" %>

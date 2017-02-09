@@ -1,0 +1,21 @@
+<div class="row">
+  <header class="main-box-header clearfix">
+    <h2>Blog</h2>
+  </header>
+  <% user.posts.blog.each do |blog| %>
+  <div class="col-md-4">
+      <div class="product-item">
+        <div class="pi-img-wrapper">
+          <%= image_tag "framgia.png", class: "img-responsive resize-related-blog" %>
+          <div>
+            <%= link_to "View blog", blog_path(I18n.locale, blog), class: "btn" %>
+          </div>
+        </div>
+        <h3><%= link_to blog.title, blog_path(I18n.locale, blog) %></h3>
+        <div class="pi-price"><%= blog.user.name %></div>
+        <%= link_to "View more", blog_path(I18n.locale, blog), class: "btn add2cart" %>
+        <div class="sticker sticker-new"></div>
+      </div>
+  </div>
+  <% end %>
+</div>

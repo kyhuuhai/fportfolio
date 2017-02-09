@@ -1,0 +1,18 @@
+<div class="row">
+  <% @posts_relate.each do |blog_relate| %>
+  <div class="col-md-4">
+      <div class="product-item">
+        <div class="pi-img-wrapper">
+          <%= image_tag "framgia.png", class: "img-responsive resize-related-blog" %>
+          <div>
+            <%= link_to "View blog", blog_path(I18n.locale, blog_relate), class: "btn" %>
+          </div>
+        </div>
+        <h3><%= link_to blog_relate.title, blog_path(I18n.locale, blog_relate) %></h3>
+        <div class="pi-price"><%= blog_relate.user.name %></div>
+        <%= link_to "View more", blog_path(I18n.locale, blog_relate), class: "btn add2cart" %>
+        <div class="sticker sticker-new"></div>
+      </div>
+  </div>
+  <% end %>
+</div>

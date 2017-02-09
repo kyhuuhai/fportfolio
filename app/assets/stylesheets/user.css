@@ -93,7 +93,7 @@
 
 .testimonial.testimonial-primary .testimonial-writer-name {
   color: #337AB7;
-  width: 133px;
+  width: 130px;
 }
 
 .testimonial.testimonial-info .testimonial-section {
@@ -283,7 +283,8 @@
 }
 
 .member-modal-width {
-  width: 600px !important;
+  top: -4% !important;
+  position: fixed !important;
 }
 
 .login-modal-width {
@@ -299,6 +300,10 @@
   width: 215px !important;
 }
 
+.image-modal{
+  width: 270px;
+  height: 190px;
+}
 .thumb img {
   width: 50px;
   height: 50px;
@@ -306,4 +311,7 @@
 .user-photo-form td {
   width: 100px;
   padding: 10px 20px 10px 20px;
+}
+img.raty-cancel {
+  display: none;
 }

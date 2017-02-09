@@ -1,3 +1,3 @@
- <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-thumbs-up"), 
-   like_path(id: project.id), method: :delete, 
+<%= link_to "Like #{image_tag("like-up.png", class: "like-button")}".html_safe,
+   like_path(id: project.id), method: :delete,
    class: 'btn btn-default stat-item active', id: "like-post", remote: true %>

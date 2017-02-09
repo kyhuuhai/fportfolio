@@ -2,12 +2,13 @@
   color: #252525;
   text-transform: uppercase;
   font-size: 18px;
+  padding-left: 50px;
 }
 
 .k2t_widget_member ul li {
     display: inline-block;
     width: 95%;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-top: 5px;
 }
 
@@ -28,6 +29,7 @@
   color: #636363;
   font-family: inherit;
   font-weight: inherit;
+  margin-left: 36px;
 }
 
 .k2t_widget_member ul li .member-thumb img {

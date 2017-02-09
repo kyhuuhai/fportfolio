@@ -20,11 +20,11 @@
               <div class="post-thumb">
                 <%= image_tag blog.image.url, class: "img-responsive resize-blog" %>
               </div>
-              <h4 class="post-title"><%= link_to blog.title, "" %></h4>
+              <h4 class="post-title"><%= link_to blog.title, blog_path(I18n.locale, blog) %></h4>
               <div class="post-meta text-uppercase">
                 <span><%= I18n.l blog.created_at, format: t("format.datetime_create") %></span>
-                <span><%= t "in" %> <%= link_to blog.category.name, blogs_path(category: blog.category.id) %></span>
-                <span><%= t "by" %> <%= link_to blog.user.name, "" %></span>
+                <span><%= t "in" %> <%= link_to blog.category.name, blogs_path(I18n.locale, category: blog.category.id) %></span>
+                <span><%= t "by" %> <%= link_to blog.user.name, user_path(I18n.locale, blog.user) %></span>
               </div>
               <div class="post-article">
                 <%= blog.content.truncate(Settings.description) %>...

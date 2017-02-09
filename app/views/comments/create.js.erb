@@ -1,7 +1,3 @@
-<% if @comment.errors.any? %>
-  alert('<%= I18n.t("errors") j @comment.errors.full_messages.join(" ; ") %>')
-<% else %>
-  $('<%= j render @comment %>').appendTo('.entries');
-  $('.form-control').val('');
-  $('.form-control').val('');
-<% end %>
+$('<%= j render @comment %>').appendTo('.entries');
+$('.form-control').val('');
+$('.form-control').val('');

@@ -103,7 +103,7 @@ label {
    background-color: #4CAF50; /* Green */
    border: none;
    color: black;
-   padding: 15px 32px;
+   padding: 22px 40px;
    text-align: center;
    text-decoration: none;
    display: inline-block;
@@ -189,10 +189,6 @@ label {
   margin-right: 25px;
   padding: 0;
   border-radius: 0;
-}
-
-#slider{
-  margin-top: 80px;
 }
 
 #home-carousel  .item {
@@ -377,11 +373,6 @@ label {
   -webkit-transition-property: -webkit-transform, opacity;
   -moz-transition-property:-moz-transform, opacity;
   transition-property:transform, opacity;
-}
-
-#our-works {
-  padding-top: 100px;
-  padding-bottom: 120px;
 }
 
 .portfolio-wrapper ul.filter {
@@ -911,10 +902,6 @@ label {
   border-radius: 0;
 }
 
-#slider{
-  margin-top: 80px;
-}
-
 #home-carousel  .item {
   background-position: center top;
   background-repeat: no-repeat;
@@ -1100,7 +1087,7 @@ label {
 }
 
 #our-works {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 120px;
 }
 
@@ -1451,11 +1438,11 @@ label {
 
 #page-header {
   background-color: #f5f5f5;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-bottom: 0px;
   position: relative;
   margin-bottom: 50px;
-  margin-top: 80px;
+
 }
 
 .single-blog {
@@ -1492,15 +1479,6 @@ label {
   padding: 8px 14px;
   width: 100%;
   margin-bottom: 20px;
-}
-
-#page-header {
-  background-color: #f5f5f5;
-  padding-top: 50px;
-  padding-bottom: 0px;
-  position: relative;
-  margin-bottom: 50px;
-  margin-top: 80px;
 }
 
 .single-blog {
@@ -1851,6 +1829,9 @@ ul.content-flickr li {
 
 .left {
   float: left;
+  margin-left: 21px;
+  margin-right: -77px;
+
 }
 
 .member1 {
@@ -2127,4 +2108,44 @@ ul.content-flickr li {
 .resize-img-show-blog {
   width: 100% !important;
   height: 598px;
+}
+.show-attributes {
+  margin-bottom: 10px;
+}
+.comment_box {
+  padding-top: 15px;
+}
+.content-height {
+  min-height: 107px;
+}
+
+.wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+.resize-project {
+  width: 360px;
+  height: 220px;
+}
+
+.like-button {
+  height: 20px;
+  width: 20px;
+}
+
+.post-description {
+  margin: 20px;
+}
+
+#comment_content {
+  margin-left: 30px;
+}
+
+.post-description {
+  margin: 10px;
+}
+
+img.raty-cancel {
+  display: none;
 }

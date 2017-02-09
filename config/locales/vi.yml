@@ -30,7 +30,7 @@ vi:
   close: "Đóng"
   login: "Đăng nhập"
   read_more: "Xem thêm"
-  liked: "Thích"
+  liked: "lượt thích"
   errors: "Lỗi"
   message: "Lời Nhắn"
   contact_us: "Liên hệ với chúng tôi"
@@ -147,13 +147,13 @@ vi:
   participate:
     description: "Vị Trí"
     available: "Thành Viên không tồn tại !"
-  portfolio: "Các dự án"
+  portfolio: "Dự án"
   feature_project: "ĐẶC ĐIỂM DỰ ÁN"
   member_of_project: "Thành viên của dự án"
   close: "Đóng"
   join_project: "Tham gia"
-  server_informations: "Cơ sở dữ liệu"
-  core_features: "Công nghệ và framework"
+  server_informations: "Thông tin server"
+  core_features: "Tính năng chính :"
   record_isnt_exist: "Không tìm thấy thao tác này"
   errors:
     messages:
@@ -211,3 +211,13 @@ vi:
   format:
     datetime_create: "%m, %d %Y"
   categories: "Thể loại"
+  news: "Thông báo"
+  format:
+    datetime_create: "%m, %d %Y"
+  datetime:
+    distance_in_words:
+      x_minutes:
+        one: "1 phút trước"
+        other: "%{count} phút trước"
+      less_than_x_minutes: "vừa mới bình luận"
+      about_x_hours: "%{count} giờ trước"

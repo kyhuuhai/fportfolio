@@ -1,0 +1,22 @@
+<header class="main-box-header clearfix">
+  <h2>Profile</h2>
+</header>
+<dl class="dl-horizontal">
+  <dt><strong>Name:</strong></dt>
+  <dd><%= object.name %></dd>
+  <dt><strong>Nick name:</strong></dt>
+  <dd><%= object.user_name %></dd>
+  <dt><strong>Position:</strong></dt>
+  <dd><%= object.position %></dd>
+  <dt><strong>Email:</strong></dt>
+  <dd><%= object.email %></dd>
+  <dt><strong>Description:</strong></dt>
+  <dd><%= object.biography %></dd>
+  <dt><strong>Join date:</strong></dt>
+  <dd>
+    <span class="text-muted">
+    <%= I18n.l object.created_at, format: t("format.datetime_create")  %>
+    </span>
+  </dd>
+
+</dl>

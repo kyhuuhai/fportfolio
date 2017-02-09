@@ -1,0 +1,18 @@
+<div class="main-box clearfix">
+  <div class="main-box-body clearfix">
+    <header class="main-box-header clearfix">
+      <h2>Techniques</h2>
+    </header>
+    <ul class="widget-users row">
+      <% object.each do |technique| %>
+      <li class="col-md-12">
+        <div class="details">
+          <div class="name">
+            <a href="#"><%= technique.skill %></a>
+          </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

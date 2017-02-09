@@ -1,7 +1,21 @@
-<div class="container" style="padding-top:30px">
-  <h1 class="text-center"><%= t "users.label" %></h1>
-  <div class="row">
+<!-- PAGE HEADER -->
+  <section id="page-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title">
+            <h1>Member of Framgia</h1>
+            <span class="st-border"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /PAGE HEADER -->
+<div class="container">
+  <div class="ui link cards">
     <%= render @users %>
   </div>
   <%= paginate @users %>
 </div>
+

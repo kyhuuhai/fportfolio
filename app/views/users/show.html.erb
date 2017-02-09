@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row" id="user-profile" style="margin-top: 80px;">
+    <div class="col-lg-3 col-md-4 col-sm-4">
+      <div class="main-box clearfix">
+        <header class="main-box-header clearfix">
+          <h2><%= @user.name %></h2>
+        </header>
+        <div class="main-box-body clearfix">
+          <div class="profile-status">
+            <i class="fa fa-circle"></i> Framgia
+          </div>
+          <img src="http://i1155.photobucket.com/albums/p555/ptnk1995/anh_trung_zpszxd6qpuh.png" alt="" class="profile-img img-responsive center-block" style="width: 159px; height: 159px; border-radius: 50%;">
+          <div class="profile-label">
+            <span class="label label-danger">Admin</span>
+          </div>
+          <div class="profile-stars">
+            <div class="disable-cancel">
+          <%= rating_for @user, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+        </div>
+          </div>
+          <div class="profile-since">
+            Member since: <%= I18n.l @user.created_at, format: t("format.datetime_create")  %>
+          </div>
+          <div class="profile-details">
+            <ul class="fa-ul">
+              <li><i class="fa-li fa fa-comment"></i>Blogs: <span><%= @user.posts.blog.count %></span></li>
+              <li><i class="fa-li fa fa-tasks"></i>Joined Projects: <span><%= @user.projects.count %></span></li>
+            </ul>
+          </div>
+          <div class="profile-message-btn center-block text-center">
+            <a href="#" class="btn btn-success">
+            <i class="fa fa-envelope"></i>
+            Send message
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 col-md-8 col-sm-8">
+      <div class="main-box clearfix">
+        <div class="tabs-wrapper profile-tabs">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-newsfeed" data-toggle="tab">Profile</a></li>
+
+            <li class=""><a href="#tab-certificates" data-toggle="tab">Certificates</a></li>
+            <li class=""><a href="#tab-technique" data-toggle="tab">Techniques</a></li>
+            <li class=""><a href="#tab-blog" data-toggle="tab">Blog</a></li>
+            <li class=""><a href="#tab-project" data-toggle="tab">Project</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane fade active in" id="tab-newsfeed">
+              <div id="newsfeed">
+                <%= render "profile", object: @user %>
+              </div>
+            </div>
+
+            <div class="tab-pane clearfix fade" id="tab-certificates">
+              <!-- Certification-->
+              <%= render "certificate_of_user", object: @certificate_users %>
+              <!-- -->
+              <br>
+            </div>
+            <div class="tab-pane fade" id="tab-technique">
+              <!-- tech -->
+              <%= render "technical_of_user", object: @techniques %>
+              <!-- end -->
+            </div>
+            <div class="tab-pane fade" id="tab-blog">
+              <!-- -->
+              <%= render "blogs/blogs_of_user", user: @user %>
+              <!-- -->
+            </div>
+            <div class="tab-pane fade" id="tab-project">
+              <div class="table-responsive">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

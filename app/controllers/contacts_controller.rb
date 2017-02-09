@@ -1,6 +1,5 @@
 class ContactsController < ApplicationController
   def new
-    @contact = Contact.new
     @key = Settings.link_map + ENV["GOOGLE_API_KEY"]
   end
 

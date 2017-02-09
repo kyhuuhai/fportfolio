@@ -1,0 +1,17 @@
+development:
+  FACEBOOK_APP_ID: "1053363301441855"
+  FACEBOOK_APP_SECRET: "c5940c65732fa9fd260c04cd7df9812e"
+  TWITTER_APP_ID: "kJjwLQ9c780VxnnTowUuitmcN"
+  TWITTER_APP_SECRET: "oyXQURyZqbSzsdV7OctWEKObPhzmYMJ2xAi6QqpZIr8enLKaCn"
+  GOOGLE_CLIENT_ID: "114648735673-08n1s01fd43l744kn7icrubeebu991og.apps.googleusercontent.com"
+  GOOGLE_CLIENT_SECRET: "gXyuGxD-Y2izv8iWs5qAQj-C"
+  gmail_username: "fportfolio1@gmail.com"
+  gmail_password: "fportfolio123"
+  GOOGLE_API_KEY: "AIzaSyBuAEirF1cziIey9Ovm_HPM5hiym4J9XqE"
+test:
+  FACEBOOK_APP_ID: "1053363301441855"
+  FACEBOOK_APP_SECRET: "c5940c65732fa9fd260c04cd7df9812e"
+  TWITTER_APP_ID: "kJjwLQ9c780VxnnTowUuitmcN"
+  TWITTER_APP_SECRET: "oyXQURyZqbSzsdV7OctWEKObPhzmYMJ2xAi6QqpZIr8enLKaCn"
+  GOOGLE_CLIENT_ID: "114648735673-08n1s01fd43l744kn7icrubeebu991og.apps.googleusercontent.com"
+  GOOGLE_CLIENT_SECRET: "gXyuGxD-Y2izv8iWs5qAQj-C"

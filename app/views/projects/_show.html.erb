@@ -9,44 +9,94 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-md-12">
             <div class="modal-body">
               <div class="wh-sensei-title-wrap wh-padding title-portfolio">
-                <h1 class="capitalize"><%= @project.name %></h1>
+                <h2 class="capitalize"><%= @project.name %></h2>
+                <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+                <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+                <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+                <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+                <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+                <div class="section-title">
+          <button class="ui facebook button">
+            <i class="facebook icon"></i>
+            <%= t "facebook" %>
+          </button>
+          <button class="ui twitter button">
+            <i class="twitter icon"></i>
+            <%= t "twitter" %>
+          </button>
+          <button class="ui google plus button">
+            <i class="google plus icon"></i>
+            <%= t "google_plus" %>
+          </button>
+          <button class="ui vk button">
+            <i class="vk icon"></i>
+            <%= t "vk" %>
+          </button>
+          <button class="ui linkedin button">
+            <i class="linkedin icon"></i>
+            <%= t "linkedin" %>
+          </button>
+          <button class="ui instagram button">
+            <i class="instagram icon"></i>
+            <%= t "instagram" %>
+          </button>
+          <button class="ui youtube button">
+            <i class="youtube icon"></i>
+            <%= t "youtube" %>
+          </button>
+
+        </div>
                 <hr />
               </div>
               <p class="desc-portfolio"><%= @project.description %></p>
               <div class="portfolio">
-                <div class="three fourths wh-padding wh-content-inner left">
-                  <figure class="wpb_wrapper vc_figure">
-                    <div class="vc_single_image-wrapper   vc_box_border_grey">
-                      <div id="portfolio_slide" class="carousel slide"
-                        data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                          <% @images.each_with_index do |image, index| %>
-                            <div class="item <%= set_class_by_index index %>">
+                <div class="col-md-8">
+                  <div class="three fourths wh-padding wh-content-inner left">
+                    <figure class="wpb_wrapper vc_figure">
+                      <div class="vc_single_image-wrapper   vc_box_border_grey">
+                        <div id="portfolio_slide" class="carousel slide"
+                          data-ride="carousel">
+                          <div class="carousel-inner" role="listbox">
+                            <% @project.images.each_with_index do |image, index| %>
+                              <div class="item <%= set_class_by_index index %>">
                                 <%= image_tag image.image.url ,
                                   class: "img-responsive img-centered
-                                img-slide img-project" %>
-                            </div>
-                          <% end %>
-                          <ol class="carousel-indicators">
-                            <% @images.each_with_index do |image, index| %>
-                              <li data-target="#portfolio_slide"
-                                data-slide-to=<%= index %>
-                                class="<%= set_class_by_index index %>">
-                              </li>
+                                    img-slide img-project" %>
+                              </div>
                             <% end %>
-                          </ol>
+                            <ol class="carousel-indicators">
+                              <% @images.each_with_index do |image, index| %>
+                                <li data-target="#portfolio_slide"
+                                  data-slide-to=<%= index %>
+                                  class="<%= set_class_by_index index %>">
+                                </li>
+                              <% end %>
+                            </ol>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </figure>
-                  <div>
+                    </figure>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="wh-sidebar one fourth wh-padding left width-333">
+                    <section class="course-meta course-enrolment">
+                      <button type="submit" class="button-member-join-project btn btn-primary">
+                        <%= t "join_project" %>
+                      </button>
+                    </section>
+                    <%= render "member_of_project", object: @project.users %>
+                  </div>
+                </div>
                     <br />
-                    <span class="feature-project">
-                      <b><%= t "feature_project" %></b>
-                    </span><hr />
+                    <div class="col-md-6">
+                      <p class="text-left">
+                        <b> <%= t "core_features" %>: </b><br />
+                        <%= @project.core_features %></p>
+                    </div>
                     <div class="col-md-6">
                       <p class="text-left">
                         <b> <%= t "server_informations" %>: </b><br />
@@ -54,21 +104,29 @@
                     </div>
                     <div class="col-md-6">
                       <p class="text-left">
-                        <b> <%= t "core_features" %>: </b><br />
-                        <%= @project.core_features %>
+                        <b> <%= t "pm_url" %>: </b><br />
+                        <%= @project.pm_url %></p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-left">
+                        <b> <%= t "platform" %>: </b><br />
+                        <%= @project.platform %></p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-left">
+                        <b> <%= t "url" %>: </b><br />
+                        <%= @project.url %>
                       </p>
                     </div>
-                  </div>
+                    <div class="col-md-6">
+                      <p class="text-left">
+                        <b> <%= t "git_repository" %>: </b><br />
+                        <%= @project.git_repository %>
+                      </p>
+                    </div>
                   <hr />
                 </div>
-                <div class="wh-sidebar one fourth wh-padding left width-333">
-                  <section class="course-meta course-enrolment">
-                    <button type="submit" class="button-member-join-project">
-                      <%= t "join_project" %>
-                    </button>
-                  </section>
-                  <%= render "member_of_project", object: @members %>
-                </div>
+
                 <div class="clear"></div>
               </div>
               </div>

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!,only: [:create, :new, :update, :edit]
 
   def new
     @categories = Category.all
@@ -29,6 +29,8 @@ class ProjectsController < ApplicationController
     @project = Project.find_by id: params[:id]
     @message = Message.new
     if @project
+      @comments = @project.comments
+      @like = @project.likes.find_by(user_id: current_user.id)
       @images = @project.images
       @members = @project.users.merge(Participate.accepted)
     else

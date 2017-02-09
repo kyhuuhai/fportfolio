@@ -1,22 +1,31 @@
-<div class="col-sm-3">
-  <div id="tb-testimonial" class="testimonial testimonial-primary">
-    <div class="testimonial-desc">
-      <%= link_to image_tag user.images.first.image.url,
-        data: {toggle: "modal", target: "#myModal#{user.id}"} %>
-      <div class="testimonial-writer">
-        <div class="testimonial-writer-name"><%= user.name %></div>
-        <div class="testimonial-writer-designation"><%= user.position %></div>
-        <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-        <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-        <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-        <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-        <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
-        <br><%= t "users.like" %><br><%= t "users.rate" %>
-      </div>
+<div class="card" style="width: 270px; height: 380px; margin-bottom: 30px">
+  <div class="image">
+    <%= image_tag user.images.first.image.url,
+        data: {toggle: "modal", target: "#myModal#{user.id}"},
+         style: "width: 270px; height: 230px; " %>
+  </div>
+  <div class="content">
+    <div class="header"><%= link_to user.name, user_path(I18n.locale, user) %></div>
+    <div class="meta">
+      <%= user.position %>
+    </div>
+    <div class="disable-cancel">
+            <%= rating_for user, :rating, disable_after_rate: true, enable_half: true, cancel: false %>
+          </div>
+    <div class="description">
+      <%= user.biography.truncate(Settings.biography) %>
     </div>
   </div>
+  <div class="extra content">
+    <span class="right floated">
+      Joined in 2017
+    </span>
+    <span>
+      <i class="user icon"></i>
+      <%= user.projects.count %> projects
+    </span>
+  </div>
 </div>
-
 <div class="modal member-modal-width fade" id="myModal<%= user.id %>" tabindex="-1" role="dialog",
   aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -28,9 +37,9 @@
         </div>
         <div class="modal-body">
           <center>
-            <%= image_tag user.images.first.image.url, class: "img-circle" %>
+            <%= image_tag user.images.first.image.url, class: "image-modal img-circle" %>
             <h1 class="media-heading"><%= user.name %></h1>
-            <h2 class="media-heading"><%= user.position %></h2>
+            <h2 class="media-heading"><%= user.position %></h3>
             <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
             <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
             <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
@@ -52,7 +61,7 @@
                 </tr>
                 <tr>
                   <td class="first"><h4>
-                    <span class="glyphicon glyphicon-certificate" style="color:#f4b942">
+                    <span class="glyphicon glyphicon-list-alt" style="color:#f4b942">
                     </span><%= t "users.skill" %></h4>
                   </td>
                   <td class="second"><h4>
@@ -61,13 +70,16 @@
                   </td>
                 </tr>
               </table>
+              <hr>
             </div>
           </div>
 
-          <hr>
           <center>
-            <h4 class="text-left"><strong><%= t "users.biography" %> </strong><br>
-              <%= user.biography %></h4><br>
+            <h5 class="text-left"><strong>
+              <span class="glyphicon glyphicon-user" >
+                <%= t "users.biography" %>
+               </strong><br>
+              <%= user.biography %></h5><br>
           </center>
           <% if user_signed_in? %>
             <strong>
@@ -91,3 +103,8 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".disable-cancel img.raty-cancel").hide();
+  });
+</script>

@@ -211,4 +211,13 @@ en:
   format:
     datetime_create: "%m, %d %Y"
   categories: "Categories"
-
+  news: "News"
+  format:
+    datetime_create: "%m, %d %Y"
+  datetime:
+    distance_in_words:
+      x_minutes:
+        one: "1 minutes ago"
+        other: "%{count} minutes ago"
+      less_than_x_minutes: "just now"
+      about_x_hours: "%{count} hours ago"

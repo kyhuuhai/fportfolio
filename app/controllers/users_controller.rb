@@ -4,6 +4,12 @@ class UsersController < ApplicationController
     @users = User.order_by_newest.page(params[:page]).per Settings.per_page.user
   end
 
+  def show
+    @user = User.find_by id: params[:id]
+    @certificate_users = @user.certificate_users
+    @techniques = @user.techniques
+  end
+
   def new
     @user = User.new
   end

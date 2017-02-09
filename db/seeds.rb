@@ -11,7 +11,9 @@ Category.create(name: "Mobile")
 Category.create(name: "Embedded")
 Category.create(name: "Game")
 Category.create(name: "Multi Platform")
+Category.create(name: "Category 1", target_type: 0)
 
+Category.create(name: "Category 2", target_type: 0)
 5.times.each do |i|
   name =  "Project #{i+1}"
   url = "http://randomtextgenerator.com/"

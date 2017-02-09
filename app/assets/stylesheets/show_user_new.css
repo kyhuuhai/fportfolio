@@ -1,0 +1,81 @@
+.main-box {
+    background: #FFFFFF;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+    border-radius: 3px;
+    background-clip: padding-box;
+}
+
+.main-box h2 {
+    font-size: 1.3em;
+    line-height: 29px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-box .main-box-header {
+    min-height: 50px;
+    padding: 10px 20px;
+}
+.main-box .main-box-body {
+    padding: 0 20px 20px 20px;
+}
+#user-profile .profile-status {
+    font-size: 0.75em;
+    margin-top: -10px;
+    padding-bottom: 10px;
+    color: #8bc34a;
+}
+#user-profile .profile-img {
+    border-radius: 50%;
+    background-clip: padding-box;
+    margin-bottom: 15px;
+}
+#user-profile .profile-label {
+    text-align: center;
+    padding: 5px 0;
+}
+#user-profile .profile-stars {
+    color: #FABA03;
+    padding: 7px 0;
+    text-align: center;
+}
+#user-profile .profile-since {
+    text-align: center;
+    margin-top: -5px;
+}
+#user-profile .profile-details {
+    padding: 15px 0;
+    border-top: 1px solid #e7ebee;
+    border-bottom: 1px solid #e7ebee;
+    margin: 15px 0;
+}
+
+.widget-users li {
+    border-bottom: 2px solid #ebebeb;
+    padding: 15px 0;
+    height: 96px;
+}
+.widget-users li>.img {
+    float: left;
+    margin-top: 8px;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+.widget-users li>.details {
+    margin-left: 60px;
+}
+.widget-users li>.details>.name {
+    font-weight: 600;
+}
+li>.details>.time {
+    color: #03a9f4;
+}
+.widget-users li>.details>.time {
+    color: #03a9f4;
+    font-size: 0.75em;
+    padding-bottom: 7px;
+}
