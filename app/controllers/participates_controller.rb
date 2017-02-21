@@ -1,20 +1,31 @@
 class ParticipatesController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_project, only: :create
+  before_action :load_project, only: [:create, :index, :destroy]
+  before_action :check_permission
+  before_action :load_participate, only: [:destroy, :show]
+
+  def index
+    @search = User.member_not_in_project(@project.users.pluck(:id)).ransack params[:q]
+    @users = @search.result.page(params[:page]).per Settings.per_page.user
+    @participates = @project.participates.includes :user
+  end
+
+  def new
+  end
 
   def create
-    @participate = @project.participates.find_by user_id: participate_params[:user_id]
-    if @participate
-      flash[:danger] = t "available"
-    else
-      @participate = @project.participates.build participate_params
-      if @participate.save
-        flash[:success] = t "participates.created"
-      else
-        flash[:danger] = t "participates.create_failed"
-      end
+    @participate = Participate.new participate_params
+    @participate.save
+    respond_to do |format|
+      format.js
     end
-    redirect_to project_users_path(I18n.locale, @project)
+  end
+
+  def destroy
+    @participate.destroy
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
@@ -24,9 +35,25 @@ class ParticipatesController < ApplicationController
   end
 
   def load_project
-    @project = Project.find_by id: participate_params[:project_id]
+    @project = Project.find_by id: params[:project_id]
     unless @project
       flash[:danger] = t "project_not_found"
+      redirect_to root_url
+    end
+  end
+
+  def load_participate
+    @participate = Participate.find_by id: params[:id]
+    unless @participate
+      flash[:danger] = t "user_not_found"
+      redirect_to root_url
+    end
+  end
+
+  def check_permission
+    @participate = @project.participates.find_by_user_id current_user.id
+    unless @participate
+      flash[:danger] = t "no_permission"
       redirect_to root_url
     end
   end

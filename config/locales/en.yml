@@ -1,5 +1,7 @@
 en:
+  search: "Search"
   succeed: "Succeed"
+  remove: "Remove"
   project_not_found: "Project not found"
   user_not_found: "User not found"
   available: "User is available in your project"
@@ -50,6 +52,8 @@ en:
   notification: "Notifications"
   like_button: "Like"
   edit_home: "Edit Design Home"
+  no_permission: "You don't have a permission"
+  find_by_name_or_email: "Find by name or email"
   contacts:
     create:
       success: "Thank you for contact with us, plese wait Customer Service team will be responding to you soon."

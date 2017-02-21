@@ -6,13 +6,12 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi|ja/ do
     root "static_pages#home"
     resources :projects do
-      resources :users
+      resources :participates
     end
     resources :users
     resources :blogs
     resources :news
     resources :likes
-    resources :participates
     resources :comments
     resources :contacts
     resources :categories

@@ -361,3 +361,7 @@
 .float-right {
   float: right;
 }
+
+.margin-top-50 {
+  margin-top: 50px !important;
+}

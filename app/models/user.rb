@@ -24,6 +24,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.user.name}
 
   scope :order_by_newest, ->{order created_at: :desc}
+  scope :member_not_in_project, lambda { |ids| where(["id NOT IN (?)", ids]) if ids.any? }
 
   ratyrate_rateable :rating
 

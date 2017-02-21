@@ -1,5 +1,7 @@
 vi:
+  search: "Tìm kiếm"
   succeed: "Thành công"
+  remove: "Xóa"
   dictionary:
   too_long: &too_long " quá dài"
   blank: &blank " không được trống"
@@ -52,6 +54,8 @@ vi:
   notification: "Thông báo"
   like_button: "Thích"
   edit_home: "Thiết kế trang chủ website"
+  no_permission: "Bạn không có quyền để thực hiện hành động này "
+  find_by_name_or_email: "Tìm theo tên hoặc email"
   contacts:
     create:
       success: "Cảm ơn bạn đã liên lạc với chúng tôi, vui lòng đợi nhóm dịch vụ khách hàng sẽ phản hồi với bạn sớm."
